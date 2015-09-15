@@ -225,7 +225,7 @@ Display属性会影响页面的渲染，因此请合理使用
 #### 本地数据持久化和更新机制(版本管理)
 对于一些时效性没有那么高的数据，可以考虑将接口数据缓存。那么页面的渲染将变成这样的流程：
 
-![20.png](https://img.alicdn.com/tps/TB1DMvFJpXXXXX2XXXXXXXXXXXX-715-480.jpg)
+![20.png](https://img.alicdn.com/tps/TB1QkPoJpXXXXXSXFXXXXXXXXXX-337-352.png)
 
 而非首次进入界面，流程如下：
 
@@ -281,7 +281,7 @@ Display属性会影响页面的渲染，因此请合理使用
 #### Charles
 Charles Proxy，可以说是H5测试的一个神器。
 它的作用是在PC端开启一个代理服务器，手机连到这个代理服务器上之后，所有的http请求就都可以在这里看得清清楚楚。经过配置证书选项，https的请求也可以正常查看。
-![80.png](https://img.alicdn.com/tps/TB1hhzoJpXXXXX7XFXXXXXXXXXX-573-182.png)
+![80.png](https://img.alicdn.com/tps/TB1wGfyJpXXXXXJXpXXXXXXXXXX-959-339.png)
 
 从图中，我们明显可以看到，有一些404的异常请求，这些都将对我们H5应用的性能造成影响。
 如果我们发现有一些资源的Duration比较大，那这些可能是服务端响应太慢，自然也可以作为我们优化的依据。
