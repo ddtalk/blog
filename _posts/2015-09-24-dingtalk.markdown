@@ -7,24 +7,35 @@ author:     "钉钉团队"
 header-img: "img/post-bg-06.jpg"
 ---
 
-## 阿里云证书配置-slb（负载均衡）
-### 一、 安装SSL证书的环境
+# 阿里云证书配置-slb（负载均衡）
+
+## 一、 安装SSL证书的环境
+
 1.1 SSl证书安装环境简介
 Linux服务器一台，
 阿里云slb服务器
 SSL证书一张(备注：本指南使用test.signsign.com域名OV SSL证书进行操作,通用其它版本证书)
+
 1.2网络环境要求
 请确保站点是一个合法的外网可以访问的域名地址，可以正常通过或http：//XXX进行正常访问。
 
-### 二、 SSL证书的安装
+## 二、 SSL证书的安装
+
 2.1获取SSl证书
 成功在环玺申请证书后，会得到一个有密码的压缩包文件，输入证书密码后解压得到五个文件：for Apache、for IIS、for Ngnix、for Other Server，这个是证书的几种格式，Ngnix上需要用到for Ngnix格式的证书。
+
 ![ssh_1](https://img.alicdn.com/tps/TB1iEvoJFXXXXcJXFXXXXXXXXXX-415-215.jpg)
+
 ![ssh_2](https://img.alicdn.com/tps/TB1zbTJJFXXXXczXXXXXXXXXXXX-415-376.jpg)
+
 ![ssh_3](https://img.alicdn.com/tps/TB18t_vJFXXXXarXFXXXXXXXXXX-415-248.jpg)
+
 ![ssh_4](https://img.alicdn.com/tps/TB1BkjEJFXXXXaHXpXXXXXXXXXX-415-354.jpg)
+
 ![ssh_5](https://img.alicdn.com/tps/TB1klvzJFXXXXcKXpXXXXXXXXXX-415-237.jpg)
+
 ![ssh_6](https://img.alicdn.com/tps/TB11iDMJFXXXXaZXXXXXXXXXXXX-415-223.jpg)
+
 **备注：
      证书粘贴顺序是，ssl证书，中级证书，交叉证书，根证书，中间不能空行，用回车分开**
 
