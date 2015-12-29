@@ -17,6 +17,7 @@ header-img: "img/post-bg-06.jpg"
 
 ```
 http://abc.xyz?dd_nav_bgcolor=FF5E97F6
+
 ```
 
 ### 设置导航栏标题
@@ -27,7 +28,7 @@ http://abc.xyz?dd_nav_bgcolor=FF5E97F6
 ----- | ----- | -----
 title | String | 控制标题文本，空字符串表示显示默认文本
 
-```javascript
+```
 dd.biz.navigation.setTitle({
     title : '邮箱正文',//控制标题文本，空字符串表示显示默认文本
     onSuccess : function(result) {
@@ -50,14 +51,14 @@ dd.biz.navigation.setTitle({
 
 ![setAndroidIcon](https://img.alicdn.com/tps/TB15SO.LXXXXXcWXpXXXXXXXXXX-325-59.jpg)
 
-</br>
-</br>
-</br>
+<br />
+<br />
+<br />
 
 <img src="https://img.alicdn.com/tps/TB16nmYKVXXXXXiXFXXXXXXXXXX-184-274.jpg" width = "184" height = "274" alt="图片名称" align=right />
 
 
-```javascript
+```
 dd.biz.navigation.setIcon({
     showIcon : true,//是否显示icon
     iconIndex : 1,//显示的iconIndex,如图
@@ -94,6 +95,7 @@ control | Boolean | 是否控制点击事件，true 控制，false 不控制， 
 text | String | 控制显示文本，空字符串表示显示默认文本
 
 ```
+
 dd.biz.navigation.setRight({
     show: false,//控制按钮显示， true 显示， false 隐藏， 默认true
     control: true,//是否控制点击事件，true 控制，false 不控制， 默认false
@@ -106,6 +108,7 @@ dd.biz.navigation.setRight({
     },
     onFail : function(err) {}
 });
+
 ```
 ###设置导航栏右侧多个按钮
 
@@ -154,11 +157,11 @@ dd.biz.navigation.setRight({
         /*
         {"id":"1"}
         */
-
         },
         onFail: function(err) {
         }
     });
+    
 ```
 
 
