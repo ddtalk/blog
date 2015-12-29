@@ -11,7 +11,7 @@ header-img: "img/post-bg-06.jpg"
 
 ##设置导航栏颜色
 
-在url后面拼接dd_nav_bgcolor参数即可，如下：
+在url后面拼接`dd_nav_bgcolor`参数即可，如下：
 
 支持的格式:"AARRGGBB"
 
