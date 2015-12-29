@@ -1,0 +1,263 @@
+#钉钉微应用定制化导航栏
+
+##设置导航栏颜色
+
+在url后面拼接dd_nav_bgcolor参数即可，如下：
+
+支持的格式:"AARRGGBB"
+
+```
+http://abc.xyz?dd_nav_bgcolor=FF5E97F6
+```
+
+### 设置导航栏标题
+
+##### 参数说明
+
+参数 | 参数类型 | 说明
+----- | ----- | -----
+title | String | 控制标题文本，空字符串表示显示默认文本
+
+```javascript
+dd.biz.navigation.setTitle({
+    title : '邮箱正文',//控制标题文本，空字符串表示显示默认文本
+    onSuccess : function(result) {
+        /*结构
+        {
+        }*/
+    },
+    onFail : function(err) {}
+});
+```
+
+### 设置标题栏问号Icon
+调用此jsapi之后，icon的显示位置在Android和iOS上有所区别,如下图
+
+- iOS：显示在导航栏标题的旁边，紧靠着标题
+
+![setIphoneIcon](https://img.alicdn.com/tps/TB1OSu5LXXXXXbiXFXXXXXXXXXX-325-61.jpg)
+
+- Android：显示在导航栏右侧按钮组的最左边
+
+![setAndroidIcon](https://img.alicdn.com/tps/TB15SO.LXXXXXcWXpXXXXXXXXXX-325-59.jpg)
+
+</br>
+</br>
+</br>
+
+<img src="https://img.alicdn.com/tps/TB16nmYKVXXXXXiXFXXXXXXXXXX-184-274.jpg" width = "184" height = "274" alt="图片名称" align=right />
+
+
+```javascript
+dd.biz.navigation.setIcon({
+    showIcon : true,//是否显示icon
+    iconIndex : 1,//显示的iconIndex,如图
+    onSuccess : function(result) {
+        /*结构
+        {
+        }*/
+        //点击icon之后将会回调这个函数
+    },
+    onFail : function(err) {
+    //jsapi调用失败将会回调此函数
+    }
+});
+```
+
+
+
+
+
+##设置导航栏右侧
+
+###设置导航栏右侧单个按钮
+
+调用jsapi-setRight可以设置导航栏最右侧按钮的文字，并且接收点击事件，
+
+***只能设置文本按钮，需要设置按钮的icon请查看设置下面的导航栏右侧多个按钮***
+
+##### 参数说明
+
+参数 | 参数类型 | 说明
+----- | ----- | -----
+show | Boolean | 控制按钮显示， true 显示， false 隐藏， 默认true
+control | Boolean | 是否控制点击事件，true 控制，false 不控制， 默认false
+text | String | 控制显示文本，空字符串表示显示默认文本
+
+```
+dd.biz.navigation.setRight({
+    show: false,//控制按钮显示， true 显示， false 隐藏， 默认true
+    control: true,//是否控制点击事件，true 控制，false 不控制， 默认false
+    text: '发送',//控制显示文本，空字符串表示显示默认文本
+    onSuccess : function(result) {
+        //如果control为true，则onSuccess将在发生按钮点击事件被回调
+        /*
+        {}
+        */
+    },
+    onFail : function(err) {}
+});
+```
+###设置导航栏右侧多个按钮
+
+***每一个item对应右上角的一个按钮***
+##### 参数说明
+
+| 参数        | 参数类型         | 必须  | 参数说明|
+| ------------- |:-------------:| -----:| -----:|
+| backgroundColor| String | 否 | 下拉菜单背景色|
+| items      | JSONOArray     |   是 | 多个按钮的属性数组|
+| item.id |  String      |    是 | 每一个item的唯一标示 |
+| item.iconId | String      |    否 | 钉钉预置icon的[索引值](#iconIndex)|
+| item.text | String      |    是 | item的文字属性|
+
+
+点击任一一个按钮将会回调onSuccess，并返回被点击item的id
+
+####调用示例
+
+```
+    dd.biz.navigation.setMenu({
+        backgroundColor : "#ADD8E6",
+        items : [
+            {
+                "id":"1",//字符串
+            "iconId":"file",//字符串，图标命名
+              "text":"帮助"
+            },
+            {
+                "id":"2",
+            "iconId":"photo",
+              "text":"dierge"
+            },
+            {
+                "id":"3",
+            "iconId":"setting",
+              "text":"disange",
+            },
+            {
+                "id":"4",
+            "iconId":"time",
+              "text":"disige"
+            }
+        ],
+        onSuccess: function(data) {
+        /*
+        {"id":"1"}
+        */
+
+        },
+        onFail: function(err) {
+        }
+    });
+```
+
+
+
+####多个按钮排序规则
+- items个数小于等于两个，将在右上角直接排列,如下图
+![twoitems](https://img.alicdn.com/tps/TB1WryiLXXXXXaOXpXXXXXXXXXX-540-357.jpg)
+
+- items个数大于两个，第一个按钮将在右上角显示，其他按钮在下拉菜单中显示。
+![fouritems](https://img.alicdn.com/tps/TB1Fg9dLXXXXXcwXpXXXXXXXXXX-540-344.jpg)
+
+####每个按钮显示规则
+每个item中的"text"字段是必填项
+
+
+##### 1.导航栏上的按钮显示规则（优先级从上至下）
+
+<!-- - url对应的图标
+ -->
+- iconId对应的图片
+
+- text对应的文本
+
+##### 2.下拉菜单按钮的显示规则
+
+下拉菜单有一个文字位，图片位，文字位直接显示text字段
+
+图片位显示iconId对应的图片
+
+<!-- - url对应的图标
+
+- iconId对应的图片
+ -->
+
+<!-- 
+####少于等于两个按钮-示意图
+![twoitems](https://img.alicdn.com/tps/TB1WryiLXXXXXaOXpXXXXXXXXXX-540-357.jpg)
+
+####大于两个按钮- 示意图
+![fouritems](https://img.alicdn.com/tps/TB1Fg9dLXXXXXcwXpXXXXXXXXXX-540-344.jpg)
+ -->
+
+### <span id = "iconIndex">icon索引值对应的图片</span>
+
+每个icon上方的字符串就是对应icon的索引
+
+通过设置相关索引，可以为按钮设置图标
+<table>
+<tr > 
+    <td style="text-align:center;">trash</td> 
+    <td style="text-align:center;">time</td> 
+    <td style="text-align:center;">setting</td> 
+    <td style="text-align:center;">send</td> 
+    <td style="text-align:center;">scan</td> 
+</tr >
+<tr style="background-color:gray"> 
+    <td><img  src="https://img.alicdn.com/tps/TB1U10ZLXXXXXbTXVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td> 
+    <td><img src="https://img.alicdn.com/tps/TB1Mbh3LXXXXXXAXVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1Cz4YLXXXXXcKXVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=ri100ght></td>
+    <td><img src="https://img.alicdn.com/tps/TB1e9d0LXXXXXbkXVXXXXXXXXXX-48-48.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1Tfd8LXXXXXbDXFXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+</tr >
+<tr > 
+    <td style="text-align:center;">reply</td> 
+    <td style="text-align:center;">photo</td> 
+    <td style="text-align:center;">personal</td> 
+    <td style="text-align:center;">org</td> 
+    <td style="text-align:center;">ok</td> 
+</tr >
+<tr style="background-color:gray"> 
+    <td><img src="https://img.alicdn.com/tps/TB1p09nLXXXXXXAXXXXXXXXXXXX-48-48.png" width=100 height=100 ALIGN=right></td> 
+    <td><img src="https://img.alicdn.com/tps/TB1KdqaLXXXXXXgXFXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1w81gLXXXXXXDXpXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1BEpYLXXXXXcdXVXXXXXXXXXX-48-48.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1Qkt.LXXXXXakXFXXXXXXXXXX-48-48.png" width=100 height=100 ALIGN=right></td>
+</tr >
+<tr > 
+    <td style="text-align:center;">more</td> 
+    <td style="text-align:center;">group</td> 
+    <td style="text-align:center;">forward</td> 
+    <td style="text-align:center;">folder</td> 
+    <td style="text-align:center;">file</td> 
+</tr >
+<tr style="background-color:gray"> 
+    <td><img src="https://img.alicdn.com/tps/TB17xanLXXXXXapXXXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td> 
+    <td><img src="https://img.alicdn.com/tps/TB1H142LXXXXXaiXVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1lsl9LXXXXXbgXFXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1Ge01LXXXXXa1XVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1wQOfLXXXXXaoXpXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+</tr >
+<tr > 
+    <td style="text-align:center;">edit</td> 
+    <td style="text-align:center;">create</td> 
+    <td style="text-align:center;">calendar</td> 
+    <td style="text-align:center;">addfriend</td> 
+    <td style="text-align:center;">add</td> 
+</tr >
+<tr style="background-color:gray"> 
+    <td><img src="https://img.alicdn.com/tps/TB14HSnLXXXXXanXXXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td> 
+    <td><img src="https://img.alicdn.com/tps/TB1OCigLXXXXXXZXpXXXXXXXXXX-48-48.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1pi41LXXXXXaRXVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1cut5LXXXXXc2XFXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+    <td><img src="https://img.alicdn.com/tps/TB1GN0VLXXXXXXVaXXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
+</tr >
+</table>
+
+
+
+
+
+
