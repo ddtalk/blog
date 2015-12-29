@@ -11,6 +11,8 @@ url: "http://open.dingtalk.com"
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
 highlighter: pygments
 permalink: pretty
 paginate: 5
