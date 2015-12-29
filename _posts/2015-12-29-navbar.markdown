@@ -221,7 +221,7 @@ dd.biz.navigation.setRight({
 <tr style="background-color:gray"> 
     <td><img  src="https://img.alicdn.com/tps/TB1U10ZLXXXXXbTXVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td> 
     <td><img src="https://img.alicdn.com/tps/TB1Mbh3LXXXXXXAXVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
-    <td><img src="https://img.alicdn.com/tps/TB1Cz4YLXXXXXcKXVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=ri100ght></td>
+    <td><img src="https://img.alicdn.com/tps/TB1Cz4YLXXXXXcKXVXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
     <td><img src="https://img.alicdn.com/tps/TB1e9d0LXXXXXbkXVXXXXXXXXXX-48-48.png" width=100 height=100 ALIGN=right></td>
     <td><img src="https://img.alicdn.com/tps/TB1Tfd8LXXXXXbDXFXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
 </tr >
