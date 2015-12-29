@@ -28,7 +28,7 @@ http://abc.xyz?dd_nav_bgcolor=FF5E97F6
 ----- | ----- | -----
 title | String | 控制标题文本，空字符串表示显示默认文本
 
-```
+`
 dd.biz.navigation.setTitle({
     title : '邮箱正文',//控制标题文本，空字符串表示显示默认文本
     onSuccess : function(result) {
@@ -38,7 +38,7 @@ dd.biz.navigation.setTitle({
     },
     onFail : function(err) {}
 });
-```
+`
 
 ### 设置标题栏问号Icon
 调用此jsapi之后，icon的显示位置在Android和iOS上有所区别,如下图
