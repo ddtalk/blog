@@ -1,3 +1,12 @@
+---
+layout:     post
+title:      钉钉微应用定制化导航栏
+subtitle:   "微应用"
+date:       2015-12-29 10:00:00
+author:     "钉钉团队"
+header-img: "img/post-bg-06.jpg"
+---
+
 #钉钉微应用定制化导航栏
 
 ##设置导航栏颜色
