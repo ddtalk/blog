@@ -10,9 +10,9 @@ url: "http://open.dingtalk.com"
 # facebook_username:  IronSummitMedia
 
 # Build settings
-markdown: kramdown
-kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+markdown: redcarpet
+# kramdown:
+#   input: GFM                            # use Github Flavored Markdown !important
 highlighter: pygments
 permalink: pretty
 paginate: 5
