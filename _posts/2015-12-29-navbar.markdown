@@ -177,7 +177,7 @@ dd.biz.navigation.setRight({
 每个item中的"text"字段是必填项
 
 
-##### 1.导航栏上的按钮显示规则（优先级从上至下）
+#### 1.导航栏上的按钮显示规则（优先级从上至下）
 
 <!-- - url对应的图标
  -->
@@ -185,7 +185,7 @@ dd.biz.navigation.setRight({
 
 - text对应的文本
 
-##### 2.下拉菜单按钮的显示规则
+#### 2.下拉菜单按钮的显示规则
 
 下拉菜单有一个文字位，图片位，文字位直接显示text字段
 
@@ -209,6 +209,7 @@ dd.biz.navigation.setRight({
 每个icon上方的字符串就是对应icon的索引
 
 通过设置相关索引，可以为按钮设置图标
+
 <table>
 <tr > 
     <td style="text-align:center;">trash</td> 
