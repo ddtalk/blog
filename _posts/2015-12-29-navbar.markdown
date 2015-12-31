@@ -8,7 +8,7 @@ header-img: "img/post-bg-06.jpg"
 ---
 
 #钉钉微应用定制化导航栏
-<!--
+
 ##设置导航栏颜色
 
 在url后面拼接`dd_nav_bgcolor`参数即可，如下：
@@ -19,7 +19,18 @@ header-img: "img/post-bg-06.jpg"
 http://abc.xyz?dd_nav_bgcolor=FF5E97F6
 ```
 
-### 设置导航栏标题
+### <span id = "setTitle">设置导航栏标题</span>
+
+此JSAPI在iOS和Android上的显示有所不同
+
+- iOS：根据iOS的设计规范，iOS的标题在导航栏正中央
+
+![setIphoneIcon](https://img.alicdn.com/tps/TB1P3nILXXXXXXEXpXXXXXXXXXX-325-61.jpg)
+
+- Android：根据Android的设计规范，标题显示在导航栏左侧
+
+![setAndroidIcon](https://img.alicdn.com/tps/TB1RV2rLXXXXXXSXVXXXXXXXXXX-325-59.jpg)
+
 
 ##### 参数说明
 
@@ -77,6 +88,35 @@ dd.biz.navigation.setIcon({
 ```
 
 
+### 设置左侧导航按钮
+因为，Android导航栏左侧显示的是标题（[设置导航栏标题](#setTitle)），所以此jsapi只支持iOS。
+
+![setLeft](https://img.alicdn.com/tps/TB1zwzqLXXXXXasXVXXXXXXXXXX-325-61.jpg)
+
+
+```javascript
+dd.biz.navigation.setLeft({
+    show: false,//控制按钮显示， true 显示， false 隐藏， 默认true
+    control: true,//是否控制点击事件，true 控制，false 不控制， 默认false
+    showIcon: true,//是否显示icon，true 显示， false 不显示，默认true； 注：具体UI以客户端为准
+    text: '',//控制显示文本，空字符串表示显示默认文本
+    onSuccess : function(result) {
+        /*
+        {}
+        */
+        //如果control为true，则onSuccess将在发生按钮点击事件被回调
+    },
+    onFail : function(err) {}
+});
+```
+##### 参数说明
+
+参数 | 参数类型 | 说明
+----- | ----- | -----
+show | Boolean | 控制按钮显示， true 显示， false 隐藏， 默认true
+control | Boolean | 是否控制点击事件，true 控制，false 不控制， 默认false
+showIcon | Boolean | 是否显示icon，true 显示，false 不显示，默认true； 注：具体UI以客户端为准
+text | String | 控制显示文本，空字符串表示显示默认文本
 
 
 
@@ -111,7 +151,7 @@ dd.biz.navigation.setRight({
 });
 
 ```
--->
+
 ###设置导航栏右侧多个按钮
 
 ***每一个item对应右上角的一个按钮***
