@@ -94,7 +94,7 @@ dd.biz.navigation.setIcon({
 
 
 ## 设置左侧导航按钮
-因为，Android导航栏左侧显示的是标题（[设置导航栏标题](#setTitle)），所以此jsapi只支持iOS。
+因为Android导航栏左侧显示的是标题（[设置导航栏标题](#setTitle)），所以此jsapi只支持iOS。
 
 ![setLeft](https://img.alicdn.com/tps/TB1zwzqLXXXXXasXVXXXXXXXXXX-325-61.jpg)
 
@@ -127,7 +127,7 @@ text | String | 控制显示文本，空字符串表示显示默认文本
 
 ###触发关闭
 
-关闭当前浏览器窗口
+调用此jsapi可以关闭当前浏览器窗口
 
 ```javascript
 dd.biz.navigation.close({
