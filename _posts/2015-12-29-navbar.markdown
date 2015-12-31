@@ -19,7 +19,7 @@ header-img: "img/post-bg-06.jpg"
 http://abc.xyz?dd_nav_bgcolor=FF5E97F6
 ```
 
-### <span id = "setTitle">设置导航栏标题</span>
+## <span id = "setTitle">设置导航栏标题</span>
 
 此JSAPI在iOS和Android上的显示有所不同
 
@@ -52,7 +52,7 @@ dd.biz.navigation.setTitle({
 
 ```
 
-### 设置标题栏问号Icon
+## 设置标题栏问号Icon
 调用此jsapi之后，icon的显示位置在Android和iOS上有所区别,如下图
 
 - iOS：显示在导航栏标题的旁边，紧靠着标题
@@ -88,7 +88,7 @@ dd.biz.navigation.setIcon({
 ```
 
 
-### 设置左侧导航按钮
+## 设置左侧导航按钮
 因为，Android导航栏左侧显示的是标题（[设置导航栏标题](#setTitle)），所以此jsapi只支持iOS。
 
 ![setLeft](https://img.alicdn.com/tps/TB1zwzqLXXXXXasXVXXXXXXXXXX-325-61.jpg)
