@@ -125,6 +125,24 @@ text | String | 控制显示文本，空字符串表示显示默认文本
 
 ------
 
+###触发关闭
+
+关闭当前浏览器窗口
+```
+dd.biz.navigation.close({
+    onSuccess : function(result) {
+        /*result结构
+        {}
+        */
+    },
+    onFail : function(err) {}
+})
+```
+
+
+
+------
+
 
 ##设置导航栏右侧
 ------
