@@ -11,7 +11,7 @@ header-img: "img/post-bg-06.jpg"
 
 ------
 
-##设置导航栏颜色
+##<span id = "navcolor">设置导航栏颜色</span>
 
 在url后面拼接`dd_nav_bgcolor`参数即可，如下：
 
@@ -56,7 +56,9 @@ dd.biz.navigation.setTitle({
 ```
 ------
 
-## 设置标题栏问号Icon
+## <span id = "navIcon"标题栏添加问号Icon</span>
+
+
 调用此jsapi之后，icon的显示位置在Android和iOS上有所区别,如下图
 
 - iOS：显示在导航栏标题的旁边，紧靠着标题
@@ -93,7 +95,8 @@ dd.biz.navigation.setIcon({
 ------
 
 
-## 设置左侧导航按钮
+## <span id = "setLeft">设置左侧导航按钮</span>
+
 因为Android导航栏左侧显示的是标题（[设置导航栏标题](#setTitle)），所以此jsapi只支持iOS。
 
 ![setLeft](https://img.alicdn.com/tps/TB1zwzqLXXXXXasXVXXXXXXXXXX-325-61.jpg)
@@ -149,6 +152,8 @@ dd.biz.navigation.close({
 ------
 
 ###设置导航栏右侧单个按钮
+
+
 
 调用jsapi-setRight可以设置导航栏最右侧按钮的文字，并且接收点击事件，
 
@@ -336,6 +341,7 @@ dd.biz.navigation.setRight({
     <td><img src="https://img.alicdn.com/tps/TB1GN0VLXXXXXXVaXXXXXXXXXXX-40-40.png" width=100 height=100 ALIGN=right></td>
 </tr >
 </table>
+
 
 
 
