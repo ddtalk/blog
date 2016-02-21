@@ -56,7 +56,7 @@ dd.biz.navigation.setTitle({
 ```
 ------
 
-## <span id = "navIcon"标题栏添加问号Icon</span>
+## <span id = "navIcon">标题栏添加问号Icon</span>
 
 
 调用此jsapi之后，icon的显示位置在Android和iOS上有所区别,如下图
